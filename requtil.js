@@ -12,9 +12,9 @@ function imgContent(path) {
  * Create the leaf request
  */
 exports.createRequest = createRequest;
-function createRequest(path){
+function createRequest(path, contents){
   return {
-    image: {content: imgContent(path)},
+    image: {content: contents || imgContent(path)},
     features: [],
     withFeature: function(type, maxResult) {
       this.features.push({
